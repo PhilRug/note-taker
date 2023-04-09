@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 const { fetchNote, saveNote } = require('./helpers/note-input');
 const uuid = require('./helpers/uuid');
 
@@ -47,10 +46,15 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     const note = fetchNote();
     const noteId = req.params.id;
-    const deleteNote = note.filter(function(item) {
+    const noteList = note.filter(function(item) {
         return item.id === noteId});
-}
-    )
+    const deleteNote = note.findIndex(function(item, i) {
+        return item.id === noteId});
+    if (deleteNote > -1) {
+        note.splice(deleteNote, 1);
+    }
+    saveNote(note);
+});
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
