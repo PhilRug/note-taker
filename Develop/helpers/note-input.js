@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const fetchNotes = () => {
+const fetchNote = () => {
     const data = fs.readFileSync('./db/db.json')
     if (data != null) {
         notes = JSON.parse(data);
@@ -10,7 +10,7 @@ const fetchNotes = () => {
     return notes;
 };
 
-const saveNotes = (notes) => {
+const saveNote = (notes) => {
     try {
         fs.writeFileSync('.db/db.json', JSON.stringify(notes))
     }
@@ -18,3 +18,5 @@ const saveNotes = (notes) => {
         console.error(err)
     }
 };
+
+module.exports = { fetchNote, saveNote };
