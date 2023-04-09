@@ -32,5 +32,14 @@ app.post('/api/notes', (req, res) => {
             text
         };
         currentNote.push(newNote);
+        saveNote(currentNote);
+
+        let response = {
+            status: 'success!',
+            body: newNote
+        };
+        res.json(response);
+    } else {
+        res.json('Your note didnt work!')
     }
 });
