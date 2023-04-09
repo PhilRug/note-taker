@@ -29,6 +29,7 @@ web browser and node
 - uuid file and app.listen code came from lesson 11 - 17-Ins POST Fetch
 - app.delete function found https://www.geeksforgeeks.org/express-js-app-delete-function/#
 - express.js param code https://www.geeksforgeeks.org/express-js-req-params-property/
+- response code came from lesson 11 - 18-Stu POST fetch
     
 ## Questions
 If you have any questions you can contact me at:

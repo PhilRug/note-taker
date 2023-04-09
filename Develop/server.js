@@ -46,12 +46,19 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     const note = fetchNote();
     const noteId = req.params.id;
+    const noteToDelete = note.filter(function(item) { 
+        return item.id === noteId});
     const deleteNote = note.findIndex(function(item, i) {
         return item.id === noteId});
     if (deleteNote > -1) {
         note.splice(deleteNote, 1);
     }
     saveNote(note);
+    let response = {
+        status: 'success!',
+        body: noteToDelete
+    };
+    res.json(response);
 });
 
 app.listen(PORT, () =>
