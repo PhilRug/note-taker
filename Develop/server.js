@@ -43,3 +43,15 @@ app.post('/api/notes', (req, res) => {
         res.json('Your note didnt work!')
     }
 });
+
+app.delete('/api/notes/:id', (req, res) => {
+    const note = fetchNote();
+    const noteId = req.params.id;
+    const deleteNote = note.filter(function(item) {
+        return item.id === noteId});
+}
+    )
+
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
