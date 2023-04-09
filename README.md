@@ -21,7 +21,7 @@ na
 web browser
     
 ## Testing
-insomnia required 
+web browser and node
 
 ## Credits
 - starter code came from https://github.com/coding-boot-camp/miniature-eureka.git

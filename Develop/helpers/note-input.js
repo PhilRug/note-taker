@@ -12,7 +12,7 @@ const fetchNote = () => {
 
 const saveNote = (notes) => {
     try {
-        fs.writeFileSync('.db/db.json', JSON.stringify(notes))
+        fs.writeFileSync('./db/db.json', JSON.stringify(notes))
     }
     catch (err) {
         console.error(err)
