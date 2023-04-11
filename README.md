@@ -18,7 +18,7 @@ This was exceptionally challenging, since none of the previous class videos were
 na
     
 ## Usage
-web browser
+* video can be found at https://drive.google.com/file/d/1gVOVwLxKw_5PYg3A00AJKZhAH_KLIJvA/view
     
 ## Testing
 web browser and node
